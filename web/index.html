@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <title>web1-html</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="color.js"></script>
+</head>
+<body>
+  <h1><a href="index.html">web</a></h1>
+  <input type="button" value="night" onclick="
+    nightdayhandler(this);
+  ">
+  <div id="grid">
+    <ol>
+      <li><a href="1.html">1.HTML</a></li>
+      <li><a href="2.html">2.css</a></li>
+      <li><a href="3.html">3.javascript</a></li>
+    </ol>
+    <div>
+      <h2> web이란 무엇인가?</h2>
+      <a href="https://www.w3.org/TR/html52/"
+      target="_blank" title="html speicification">hypertext markup language</a><br>
+      오늘의 <strong><u>첫</u> web도전기 </strong>
+      <br> 줄바꿈의 태그<br>
+      <img src="penguin.jpg" width="100">
+      <br><p>바꿈의 연속
+        단락의 태그</p><p> 단락은 시작과 끝이 존재</p>
+  </div>
+</div>
+  <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://anggimori.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+</html>

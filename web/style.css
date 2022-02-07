@@ -1,0 +1,29 @@
+<style>
+  a{
+    color:red;
+    text-decoration:none;
+  }
+  h1 {
+    font-size: 45px;
+    text-align: center;
+    border-width:5px;
+    border-color:red;
+    border-style: solid;
+    padding:20px;
+  }
+  ol{
+    border-right:5px solid gray;
+    width:120px;
+    padding:50px;
+  }
+  #grid{
+    display:grid;
+    grid-template-columns: 300px 1fr;
+  }
+  @media(max-width:800px) {
+    #grid{
+      display:block;}
+      ol{
+        border-right:none;}
+  }
+</style>
