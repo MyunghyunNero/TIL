@@ -24,6 +24,7 @@ public class SecurityConfig {
     public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable();  //시큐리티 필터가 기존 필터보다 우선순위
         // 내가 만든 필터를 더 우선순위를 두고 싶다면 http.addFilterBefore() 함수 이용
+        http.addFilterBefore(new MyFilter1(), BasicAuthenticationFilter.class);
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .addFilter(corsFilter)  // @CrossOrigin(인증 X) , 시큐리티 필터에 등록 인증(O)
