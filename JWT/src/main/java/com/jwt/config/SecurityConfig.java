@@ -1,6 +1,7 @@
 package com.jwt.config;
 
 
+import com.jwt.filter.MyFilter1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
@@ -20,7 +22,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable();
+        http.csrf().disable();  //시큐리티 필터가 기존 필터보다 우선순위
+        // 내가 만든 필터를 더 우선순위를 두고 싶다면 http.addFilterBefore() 함수 이용
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .addFilter(corsFilter)  // @CrossOrigin(인증 X) , 시큐리티 필터에 등록 인증(O)
